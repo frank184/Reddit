@@ -2,7 +2,7 @@
   <h2>
     <a href="<%= @link.url %>"><%= @link.title %></a>
     <br>
-    <small>Submitted by <%= @link.user.email %></small>
+    <small>Submitted by <%= @link.user.name %></small>
   </h2>
 </div>
 
@@ -44,5 +44,9 @@
     <%= f.text_area :body, class: 'form-control' %>
   </div>
   <br>
-  <%= f.submit 'Add Comment', class: 'btn btn-primary' %>
+  <% if user_signed_in? %>
+    <%= f.submit 'Add Comment', class: 'btn btn-primary' %>
+  <% else %>
+    <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' %>
+  <% end %>
 <% end %>
