@@ -1,2 +1,2 @@
 # Reddit
-### A simple Reddit clopne.
+### A simple Reddit clone.
